@@ -1,22 +1,29 @@
 package controllers;
 
+import com.mongodb.client.MongoIterable;
+import modules.MongoModule;
+import modules.MongoModuleImpl;
 import play.*;
 import play.mvc.*;
 
+import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class HelloWorld extends Controller {
 
+    @Inject
+    MongoModuleImpl mongo;
+
     public Result index(String name, int age) {
         String location = Play.application().configuration().getString("location");
         List<String> array = new ArrayList<>();
-        array.add("Elemento 1");
-        array.add("Elemento 2");
-        array.add("Elemento 3");
-        array.add("Elemento 4");
-        array.add("Elemento 5");
+
+        MongoIterable<String> iterable = mongo.mongo.listDatabaseNames();
+        for (String s : iterable) {
+            array.add(s);
+        }
 
         return ok(views.html.hello.render(name, age, location, array));
     }

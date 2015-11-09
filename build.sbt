@@ -13,7 +13,8 @@ libraryDependencies ++= Seq(
 )
 libraryDependencies ++= Seq(
   "org.webjars" %% "webjars-play" % "2.4.0-1",
-  "org.webjars" % "bootstrap" % "3.3.5"
+  "org.webjars" % "bootstrap" % "3.3.5",
+  "org.mongodb" % "mongo-java-driver" % "3.1.0"
 )
 
 // Play provides two styles of routers, one expects its actions to be injected, the
