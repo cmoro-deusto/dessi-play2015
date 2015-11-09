@@ -10,6 +10,6 @@ public class Global extends GlobalSettings {
     }
 
     public void onStop(Application app) {
-        Logger.info("Applicatino has stopped!");
+        Logger.info("Application has stopped!");
     }
 }
