@@ -2,7 +2,6 @@ package controllers;
 
 import com.mongodb.client.MongoIterable;
 import modules.MongoModule;
-import modules.MongoModuleImpl;
 import play.*;
 import play.mvc.*;
 
@@ -14,7 +13,7 @@ import java.util.List;
 public class HelloWorld extends Controller {
 
     @Inject
-    MongoModuleImpl mongo;
+    MongoModule mongo;
 
     public Result index(String name, int age) {
         String location = Play.application().configuration().getString("location");

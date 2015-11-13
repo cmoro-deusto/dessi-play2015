@@ -1,11 +1,19 @@
 package modules;
 
-import com.google.inject.AbstractModule;
+import com.mongodb.MongoClient;
+import play.Logger;
 
-public class MongoModule extends AbstractModule {
+import javax.inject.Singleton;
 
-    @Override
-    protected void configure() {
-        bind(MongoModuleImpl.class);
+@Singleton
+public class MongoModule {
+
+    public static MongoClient mongo;
+
+    public MongoModule() {
+
+        Logger.info("Connecting to mongo...");
+        this.mongo = new MongoClient();
+
     }
 }
