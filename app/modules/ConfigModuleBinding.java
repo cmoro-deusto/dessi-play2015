@@ -10,3 +10,4 @@ public class ConfigModuleBinding extends AbstractModule {
         bind(ConfigModule.class);
     }
 }
+

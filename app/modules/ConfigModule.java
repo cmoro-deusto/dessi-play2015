@@ -1,6 +1,5 @@
 package modules;
 
-import jdk.nashorn.internal.runtime.regexp.joni.Config;
 import play.Configuration;
 import play.Logger;
 
